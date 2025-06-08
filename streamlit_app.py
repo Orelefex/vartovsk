@@ -1,4 +1,4 @@
 import streamlit as st
 
-st.title("My firast app")
+st.title("My first app")
 st.write("Это только начало")
