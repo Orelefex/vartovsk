@@ -4,6 +4,6 @@ aero_page = st.Page("aero.py", title="Аэрологическая диагра�
 metar_page = st.Page("metar.py", title="METAR")
 
 pg = st.navigation([aero_page, metar_page])
-st.set_page_config(page_title="Data manager", page_icon=":material/edit:")
+st.set_page_config(page_title="Помощник синоптика", page_icon=":material/edit:")
 pg.run()
 
