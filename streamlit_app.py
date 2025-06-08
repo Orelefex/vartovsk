@@ -7,5 +7,3 @@ pg = st.navigation([aero_page, metar_page])
 st.set_page_config(page_title="Data manager", page_icon=":material/edit:")
 pg.run()
 
-st.title("My first app")
-st.write("Это только начало")
