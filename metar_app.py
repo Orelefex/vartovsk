@@ -6,7 +6,7 @@ icao = st.text_input('Введите код ИКАО аэропорта:', 'UUEE
 
 if st.button('Получить METAR'):
     try:
-        response = requests.get(f'https://metartaf.ru/{icao}.xml')
+        response = requests.get(f'https://metartaf.ru/{icao}')
         if response.status_code == 200:
             metar = response.json().get('metar', '')
             st.success(f'METAR для {icao}:')
