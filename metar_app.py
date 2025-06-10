@@ -4,8 +4,8 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from datetime import datetime
 
-st.set_page_config(page_title="METAR Decoder", page_icon="✈️")
-st.title('✈️ Мульти-декодер METAR (metartaf.ru)')
+
+st.title('✈️  METAR ')
 
 # Функция для получения данных
 def get_metar(icao):
