@@ -9,7 +9,7 @@ API_KEY = "AL2owhedvyAnChsCApVcZ-OpF_H0JSQ7FfC5ia5ILPU"  # Замените на
 
 # Функция для получения METAR
 def get_metar(icao_code):
-    url = f"https://avwx.rest/api/metar/{icao_code}?options=translate"
+    url = f"https://avwx.rest/api/metar/{icao_code}"
     headers = {"Authorization": f"Bearer {API_KEY}"}
     
     try:
