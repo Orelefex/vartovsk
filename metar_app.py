@@ -10,7 +10,7 @@ st.title('✈️  METAR ')
 # Функция для получения данных
 def get_metar(icao):
     try:
-        response = requests.get(f"https://metartaf.ru/api/metar/{icao}", timeout=5)
+        response = requests.get(f"https://metartaf.ru/{icao}.json", timeout=5)
         if response.status_code == 200:
             content_type = response.headers.get('content-type', '')
             if 'json' in content_type:
