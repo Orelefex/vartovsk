@@ -20,7 +20,7 @@ with col2:
 
 if decode_button and metar_code:
     # Формируем запрос
-    api_url = "https://avwx.rest/api/metar/KMCO"
+    api_url = "https://avwx.rest/api/metar"
     headers = {
         "Authorization": "AL2owhedvyAnChsCApVcZ-OpF_H0JSQ7FfC5ia5ILPU"  # Замените на ваш ключ
     }
