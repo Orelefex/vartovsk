@@ -101,15 +101,6 @@ else:
                     use_container_width=True
                 )
                 
-                # Кнопка для скачивания результатов
-                csv = df.to_csv(index=False).encode('utf-8')
-                st.download_button(
-                    label="Скачать как CSV",
-                    data=csv,
-                    file_name=f'metar_results_{datetime.now().strftime("%Y%m%d_%H%M")}.csv',
-                    mime='text/csv'
-                )
-
 # Примеры кодов
 with st.expander("Примеры кодов ИКАО"):
     st.table(pd.DataFrame({
