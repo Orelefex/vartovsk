@@ -10,7 +10,7 @@ st.title('✈️ Полный декодер METAR (metartaf.ru)')
 def get_metar(icao):
     try:
         # Пробуем получить JSON
-        json_url = f"https://metartaf.ru/{icao}.json"
+        json_url = f"https://metartaf.ru/{icao}.xml"
         response = requests.get(json_url)
         
         if response.status_code == 200:
