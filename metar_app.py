@@ -3,7 +3,7 @@ import requests
 from datetime import datetime
 from bs4 import BeautifulSoup  # Для XML-парсинга
 
-st.set_page_config(page_title="METAR Decoder", page_icon="✈️")
+
 st.title('✈️ Полный декодер METAR (metartaf.ru)')
 
 # Функция для получения данных
