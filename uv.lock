@@ -477,6 +477,15 @@ wheels = [
 ]
 
 [[package]]
+name = "metar"
+version = "1.11.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/b1/9f/a3444d145b833699c603ed87b5565dcb2ebf9235d85f8229bb25c5047b37/metar-1.11.0.tar.gz", hash = "sha256:0e40e86eb03fdfafef71b14d74349e88e208bd4dc15e8734b3afcf129125378b", size = 213777, upload-time = "2023-07-13T16:19:44.346Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/61/54/5f2e3e1ecd8b3c5ee9298ce0b946fa72f418b353f0e77e5d98f9fea1f3c6/metar-1.11.0-py3-none-any.whl", hash = "sha256:feafbd79667aba547f2c36986c3fffa6a14fd2a20b2e57c59a213eaa9015085a", size = 201442, upload-time = "2023-07-13T16:19:41.343Z" },
+]
+
+[[package]]
 name = "metpy"
 version = "1.7.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1121,12 +1130,14 @@ name = "vartovsk"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "metar" },
     { name = "metpy" },
     { name = "streamlit" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "metar", specifier = ">=1.11.0" },
     { name = "metpy", specifier = ">=1.7.0" },
     { name = "streamlit", specifier = ">=1.45.1" },
 ]
