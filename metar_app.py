@@ -1,9 +1,10 @@
 import streamlit as st
 from metar import Metar
 
+# Должен быть самым первым вызовом в скрипте!
 st.set_page_config(page_title="Расшифровщик METAR", page_icon="✈️")
 
-# Функция для красивой расшифровки
+# Только после этого идут остальные импорты и код
 def decode_metar(metar_text):
     try:
         obs = Metar.Metar(metar_text)
@@ -25,42 +26,3 @@ def decode_metar(metar_text):
 
 # Интерфейс
 st.title("✈️ Профессиональный расшифровщик METAR")
-st.caption("Используется библиотека Metar для точного разбора авиационных метеосообщений")
-
-with st.expander("ℹ️ Примеры METAR"):
-    st.code("""
-    METAR UUEE 141630Z 12004MPS 9999 -RA FEW007 BKN016 OVC025 03/02 Q1009 R32L/290050 NOSIG
-    METAR LFPG 141730Z 24015G25KT 200V280 8000 -SHRA SCT012 BKN020CB 08/04 Q0988 TEMPO 4000 TSRA
-    METAR KJFK 141751Z 36010KT 10SM FEW030 BKN250 22/18 A2992 RMK AO2 SLP130 T02220183
-    """)
-
-metar_input = st.text_area(
-    "Введите METAR-сообщение:",
-    value="METAR UUEE 141630Z 12004MPS 9999 -RA FEW007 BKN016 OVC025 03/02 Q1009 R32L/290050 NOSIG",
-    height=100
-)
-
-if st.button("Расшифровать", type="primary"):
-    if metar_input.strip():
-        result, error = decode_metar(metar_input)
-        
-        if error:
-            st.error(error)
-            st.markdown("**Проверьте:**")
-            st.markdown("- Формат должен начинаться с `METAR` или `SPECI`")
-            st.markdown("- Даты/время в формате `DDHHMMZ`")
-            st.markdown("- Нет опечаток в кодах облачности/явлений")
-        else:
-            st.success("Успешно расшифровано!")
-            
-            cols = st.columns(2)
-            for i, (key, value) in enumerate(result.items()):
-                cols[i % 2].markdown(f"**{key}:** {value}")
-            
-            st.divider()
-            st.subheader("Raw METAR Parsing:")
-            st.code(str(Metar.Metar(metar_input))), None
-    else:
-        st.warning("Введите METAR-сообщение для расшифровки")
-
-st.markdown("---")
